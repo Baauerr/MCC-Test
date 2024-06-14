@@ -2,7 +2,7 @@
 
 ### Implementation of a tree with the ability to add, edit and delete nodes.
 
-## Technologies:
+# Technologies:
 - React
 - Typescript
 - CSS
