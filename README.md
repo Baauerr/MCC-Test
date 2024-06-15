@@ -1,7 +1,4 @@
-# MCC-Test
-## Test task for MCC-SOFT
-
-### Implementation of a tree with the ability to add, edit and delete nodes.
+# Implementation of a tree with the ability to add, edit and delete nodes.
 
 ## Technologies:
 - React
