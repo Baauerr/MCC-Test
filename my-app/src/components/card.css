@@ -1,0 +1,15 @@
+.card {
+    padding-left: 10px;
+    transition: background-color 0.3s, border 0.3s;
+    border: 2px solid transparent; 
+    color: green;
+    overflow-wrap: break-word;
+}
+
+.card:hover {
+    border: 2px solid green; 
+}
+
+.card.selected {
+    border: 2px solid green; 
+}
