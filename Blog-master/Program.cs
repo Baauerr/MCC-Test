@@ -26,6 +26,8 @@ class Program
             
         Console.WriteLine("How many comments each user left:");
 
+        //------------------------MY FRIST QUERY------------------------------//
+
         var comments = context.BlogComments
             .GroupBy(comments => comments.UserName)
             .Select(users => new
@@ -36,6 +38,12 @@ class Program
 
         Console.WriteLine(JsonSerializer.Serialize(comments));
 
+        //------------------------MY FRIST QUERY------------------------------//
+
+
+
+
+
         //ToDo: write a query and dump the data to console
         // Expected result (format could be different, e.g. object serialized to JSON is ok):
         // Ivan: 4
@@ -43,6 +51,8 @@ class Program
         // Elena: 3
 
         Console.WriteLine("Posts ordered by date of last comment. Result should include text of last comment:");
+
+        //------------------------MY SECOND QUERY------------------------------//
 
         var sortedPosts = context.BlogPosts
             .Select(post => new
@@ -60,6 +70,12 @@ class Program
             });
 
         Console.WriteLine(JsonSerializer.Serialize(sortedPosts));
+
+        //------------------------MY SECOND QUERY------------------------------//
+
+
+
+
         //ToDo: write a query and dump the data to console
         // Expected result (format could be different, e.g. object serialized to JSON is ok):
         // Post2: '2020-03-06', '4'
@@ -68,6 +84,8 @@ class Program
 
 
         Console.WriteLine("How many last comments each user left:");
+
+        //------------------------MY THIRD QUERY------------------------------//
 
         var usersLastCommentsCount = context.BlogPosts
 
@@ -83,19 +101,16 @@ class Program
             });
 
         Console.WriteLine(JsonSerializer.Serialize(usersLastCommentsCount));
+
+        //------------------------MY THIRD QUERY------------------------------//
+
+
         // 'last comment' is the latest Comment in each Post
         //ToDo: write a query and dump the data to console
         // Expected result (format could be different, e.g. object serialized to JSON is ok):
         // Ivan: 2
         // Petr: 1
 
-
-        // Console.WriteLine(
-        //     JsonSerializer.Serialize(BlogService.NumberOfCommentsPerUser(context)));
-        // Console.WriteLine(
-        //     JsonSerializer.Serialize(BlogService.PostsOrderedByLastCommentDate(context)));
-        // Console.WriteLine(
-        //     JsonSerializer.Serialize(BlogService.NumberOfLastCommentsLeftByUser(context)));
 
     }
 
