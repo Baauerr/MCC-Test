@@ -40,10 +40,6 @@ class Program
 
         //------------------------MY FRIST QUERY------------------------------//
 
-
-
-
-
         //ToDo: write a query and dump the data to console
         // Expected result (format could be different, e.g. object serialized to JSON is ok):
         // Ivan: 4
@@ -73,9 +69,6 @@ class Program
 
         //------------------------MY SECOND QUERY------------------------------//
 
-
-
-
         //ToDo: write a query and dump the data to console
         // Expected result (format could be different, e.g. object serialized to JSON is ok):
         // Post2: '2020-03-06', '4'
@@ -104,14 +97,11 @@ class Program
 
         //------------------------MY THIRD QUERY------------------------------//
 
-
         // 'last comment' is the latest Comment in each Post
         //ToDo: write a query and dump the data to console
         // Expected result (format could be different, e.g. object serialized to JSON is ok):
         // Ivan: 2
         // Petr: 1
-
-
     }
 
     private static void InitializeData(MyDbContext context)
