@@ -38,11 +38,7 @@ export const MainPage: React.FC = () => {
                 setClickedId(null);
             }
         };
-
         document.addEventListener('click', handleClickOutside);
-        return () => {
-            document.removeEventListener('click', handleClickOutside);
-        };
     }, []);
 
     const handleAddNode = (name: string, parentId: string) => {
@@ -60,16 +56,16 @@ export const MainPage: React.FC = () => {
     };
 
     const handleEditNode = (name: string, parentId: string) => {
-
         let updatedTree = [...treeData];
         if (changeNodeName(updatedTree, parentId, name)) {
             setTreeData(updatedTree);
         }
     };
 
-    const handleRemoveNode = (Id: string) => {
+    const handleRemoveNode = () => {
         let updatedTree = [...treeData];
-        if (removeNode(updatedTree, Id)) {
+        if (clickedId) {
+            removeNode(updatedTree, clickedId)
             setTreeData(updatedTree);
             setClickedId(null)
         }
@@ -104,11 +100,7 @@ export const MainPage: React.FC = () => {
                 )}
             </div>
             <footer id={"buttons_place"}>
-                <button onClick={() => {
-                    if (clickedId !== null) {
-                        handleRemoveNode(clickedId);
-                    }
-                }}>Delete</button>
+                <button onClick={handleRemoveNode}>Delete</button>
                 <button onClick={handleOpenEditModal}>Edit</button>
                 <button onClick={handleOpenAddModal}>Add</button>
                 <button onClick={handleClear}>Clear</button>
