@@ -1,20 +1,19 @@
 import './modalWindow.css';
 
-import { ChangeEvent, ReactNode, useState } from "react"
+import { ChangeEvent, useState } from "react"
 
 export interface ModalWindowProps {
     title: string
     buttonText: string
     show: boolean,
-    id?: string,
-    name?: string
+    id: string,
+    name: string
     handleClose: () => void
     handleAction: (name: string, id: string) => void
-    children?: ReactNode;
 }
 
 export const Modal: React.FC<ModalWindowProps> = (
-    { show, buttonText, title, handleClose, handleAction, id, name, children }
+    { show, buttonText, title, handleClose, handleAction, id, name }
 ) => {
     const [inputValue, setInput] = useState<string | undefined>(name);
 
@@ -42,10 +41,7 @@ export const Modal: React.FC<ModalWindowProps> = (
                     onChange={handleInputChange}
                     placeholder="Enter name"
                 />
-                {children}
-                {id && (
-                    <button onClick={handleClick}>{buttonText}</button>
-                )}
+                <button onClick={handleClick}>{buttonText}</button>
             </div>
         </div>
     );

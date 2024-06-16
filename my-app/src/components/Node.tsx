@@ -3,7 +3,7 @@ import './node.css';
 
 interface NodeProps {
     id: string;
-    name?: string;
+    name: string;
     nodes: NodeModel[];
     setClicked: (id: string) => void;
     selectedId: string | null; 

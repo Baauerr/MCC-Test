@@ -1,5 +1,5 @@
 export interface NodeModel {
-    name?: string
+    name: string
     id: string
     nodes: NodeModel[]
 }

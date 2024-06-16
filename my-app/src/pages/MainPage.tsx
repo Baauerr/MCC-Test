@@ -50,16 +50,15 @@ export const MainPage: React.FC = () => {
         };
 
         let updatedTree = [...treeData];
-        if (addNode(updatedTree, parentId, newNode)) {
-            setTreeData(updatedTree);
-        }
+        addNode(updatedTree, parentId, newNode)
+        setTreeData(updatedTree);
     };
 
     const handleEditNode = (name: string, parentId: string) => {
         let updatedTree = [...treeData];
-        if (changeNodeName(updatedTree, parentId, name)) {
-            setTreeData(updatedTree);
-        }
+        changeNodeName(updatedTree, parentId, name)
+        setTreeData(updatedTree);
+        setClickedId(null)
     };
 
     const handleRemoveNode = () => {
@@ -84,11 +83,11 @@ export const MainPage: React.FC = () => {
 
     return (
 
-        <div id={"main_сard"} onClick={(e) => e.stopPropagation()}>
-            <header id={"header_place"}>
+        <div id={"main-сard"} onClick={(e) => e.stopPropagation()}>
+            <header id={"header-place"}>
                 Tree
             </header>
-            <div ref={cardRef} id="nodes_place">
+            <div ref={cardRef} id="nodes-place">
                 {treeData.map(child =>
                     <Tree
                         key={child.id}
@@ -99,7 +98,7 @@ export const MainPage: React.FC = () => {
                         selectedId={clickedId} />
                 )}
             </div>
-            <footer id={"buttons_place"}>
+            <footer id={"buttons-place"}>
                 <button onClick={handleRemoveNode}>Delete</button>
                 <button onClick={handleOpenEditModal}>Edit</button>
                 <button onClick={handleOpenAddModal}>Add</button>
@@ -117,14 +116,14 @@ export const MainPage: React.FC = () => {
                 )}
                 {showAddModal && (
                     <Modal
-                    show={showAddModal}
-                    handleClose={handleCloseAddModal}
-                    handleAction={handleAddNode}
-                    title="Add new node"
-                    buttonText="Add"
-                    name=""
-                    id={clickedId !== null ? clickedId : "0"}
-                />)}
+                        show={showAddModal}
+                        handleClose={handleCloseAddModal}
+                        handleAction={handleAddNode}
+                        title="Add new node"
+                        buttonText="Add"
+                        name=""
+                        id={clickedId !== null ? clickedId : "0"}
+                    />)}
             </footer>
         </div>
     )
