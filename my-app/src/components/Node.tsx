@@ -1,16 +1,15 @@
 import { NodeModel } from "../services/NodeModel"
-import './card.css';
+import './node.css';
 
-interface TreeProps {
+interface NodeProps {
     id: string;
     name?: string;
     nodes: NodeModel[];
     setClicked: (id: string) => void;
     selectedId: string | null; 
-    toChange?: boolean; 
 }
 
-export const Tree: React.FC<TreeProps> = ({ id, name, nodes, setClicked, selectedId, toChange }) => {
+export const Tree: React.FC<NodeProps> = ({ id, name, nodes, setClicked, selectedId }) => {
     const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
         e.stopPropagation();
         setClicked(id);
@@ -18,7 +17,7 @@ export const Tree: React.FC<TreeProps> = ({ id, name, nodes, setClicked, selecte
 
     return (
         <div className={`card ${id === selectedId ? 'selected' : ''}`} onClick={handleClick}>
-            {id == selectedId && toChange ? <input type="text" value={name}/> : name}
+            {name}
             <div>
                 {nodes.map(child => (
                     <Tree

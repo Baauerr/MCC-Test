@@ -1,9 +1,9 @@
 import { addNode, changeNodeName, getNameFromSelectedNode, removeNode } from "../services/TreeService"
 import { useEffect, useRef, useState } from "react"
-import { Tree } from "../components/Card"
+import { Tree } from "../components/Node"
 import { GenerateId } from "../services/IdGenerator"
 import { NodeModel } from "../services/NodeModel"
-import { Modal } from "../components/modalWindow"
+import { Modal } from "../components/ModalWindow"
 
 import "./mainPage.css"
 

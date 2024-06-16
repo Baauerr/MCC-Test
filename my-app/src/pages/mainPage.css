@@ -46,8 +46,7 @@ button {
 }
 
 button:active {
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgb(169, 255, 169);
 }
 
 #nodes_place{
