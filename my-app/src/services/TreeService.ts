@@ -1,4 +1,4 @@
-import { NodeModel } from "./NodeModel";
+import { NodeModel } from "../models/NodeModel";
 
 export function addNode(nodeArray: NodeModel[], id: string, newElement: NodeModel) {
     if (id === "0") {

@@ -1,13 +1,5 @@
-import { NodeModel } from "../services/NodeModel"
+import { NodeProps } from "../models/NodeProps";
 import './node.css';
-
-interface NodeProps {
-    id: string;
-    name: string;
-    nodes: NodeModel[];
-    setClicked: (id: string) => void;
-    selectedId: string | null; 
-}
 
 export const Tree: React.FC<NodeProps> = ({ id, name, nodes, setClicked, selectedId }) => {
     const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {

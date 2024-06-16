@@ -1,16 +1,7 @@
 import './modalWindow.css';
 
 import { ChangeEvent, useState } from "react"
-
-export interface ModalWindowProps {
-    title: string
-    buttonText: string
-    show: boolean,
-    id: string,
-    name: string
-    handleClose: () => void
-    handleAction: (name: string, id: string) => void
-}
+import { ModalWindowProps } from '../models/ModalWindowProps';
 
 export const Modal: React.FC<ModalWindowProps> = (
     { show, buttonText, title, handleClose, handleAction, id, name }
