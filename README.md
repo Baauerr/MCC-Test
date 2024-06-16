@@ -1,11 +1,13 @@
-# MCC-Test
-## Test task for MCC-SOFT
+# Tree implementation.
 
-### Implementation of a tree with the ability to add, edit and delete nodes.
+## Functional:
+- Add node
+- Edit node name
+- Delete node
+- Clear all nodes
 
 ## Technologies:
 - React
 - Typescript
 - CSS
-- Entity Framework Core (ASP.NET, C#)
 
